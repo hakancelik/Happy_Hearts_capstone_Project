@@ -22,7 +22,6 @@ MODEL_PATHS = {
 
 
 
-
 st.set_page_config(
     page_icon="❤️",
     layout="wide",
@@ -35,9 +34,9 @@ st.set_page_config(
 
 # Modelleri yükleme fonksiyonu
 @st.cache_resource
-def load_models():
-    models = {name: joblib.load(path) for name, path in MODEL_PATHS.items()}
-    return models
+loaded_models = {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items()}
+
+
 
 # Tahmin fonksiyonu
 def predict(model, input_data):
