@@ -43,8 +43,6 @@ st.set_page_config(
 
 
 
-
-
 # Modelleri yükleme fonksiyonu
 @st.cache_resource
 model = {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items()}
@@ -57,7 +55,6 @@ model = {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items
 for model_name, model in models.items():
     prediction = predict(model, input_data)
     st.write(f"{model_name} Prediction: {prediction}")
-
 # Ana uygulama fonksiyonu
 
 
