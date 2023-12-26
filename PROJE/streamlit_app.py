@@ -19,14 +19,27 @@ MODEL_PATHS = {
     "XGBoost": "PROJE/xgboost_best_model.joblib",
 }
 
+# Modelleri yükleme fonksiyonu
+@st.cache
+def load_models():
+    return {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items()}
 
+# Tahmin fonksiyonu
+def predict(model, input_data):
+    loaded_model = model
+    prediction = loaded_model.predict(input_data)
+    return prediction
 
+# Modelleri yükle
+models = load_models()
 
+# Streamlit arayüzü
 st.set_page_config(
     page_icon="❤️",
     layout="wide",
     initial_sidebar_state="expanded"
 )
+
 
 
 
@@ -39,10 +52,11 @@ model = {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items
 
 
 # Tahmin fonksiyonu
-def predict(model, input_data):
-    loaded_model = model
-    prediction = loaded_model.predict(input_data)
-    return prediction
+
+
+for model_name, model in models.items():
+    prediction = predict(model, input_data)
+    st.write(f"{model_name} Prediction: {prediction}")
 
 # Ana uygulama fonksiyonu
 
