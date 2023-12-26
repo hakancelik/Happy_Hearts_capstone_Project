@@ -8,7 +8,7 @@ import seaborn as sns
 import os
 
 
-df = pd.read_csv("heartfeature.csv")
+df = pd.read_csv("./heartfeature.csv")
 # Model dosya yollarını sabit olarak tanımla
 MODEL_PATHS = {
     "Logistic Regression": "logistic_regression_best_model.joblib",
