@@ -38,14 +38,14 @@ df.dropna(inplace=True)
 duplicates = df.duplicated()
 df = df[~duplicates]
 
-main_dir = os.path.join(os.getcwd())
-read_file = 'heartfeature.csv'
-path = os.path.join(main_dir,read_file)
+#main_dir = os.path.join(os.getcwd())
+#read_file = 'heartfeature.csv'
+#path = os.path.join(main_dir,read_file)
 
 
-df.to_csv(path, index=False)
+df.to_csv("PROJE/heartfeature.csv", index=False)
 
-df = pd.read_csv(path)
+df = pd.read_csv("PROJE/heartfeature.csv")
 
 
 # Özellik ve hedef değişkeni tanımlama
@@ -144,12 +144,12 @@ feature_names = ['age', 'sex', 'cp', 'trestbps', 'chol', 'fbs', 'restecg', 'thal
 
 
 # Model dosyalarını yükle
-logistic_regression_model = joblib.load(os.path.join(main_dir, 'logistic_regression_best_model.joblib'))
-knn_model = joblib.load(os.path.join(main_dir, 'k-nearest_neighbors_best_model.joblib'))
-decision_tree_model = joblib.load(os.path.join(main_dir, 'decision_tree_best_model.joblib'))
-random_forest_model = joblib.load(os.path.join(main_dir, 'random_forest_best_model.joblib'))
-gradient_boosting_model = joblib.load(os.path.join(main_dir, 'gradient_boosting_best_model.joblib'))
-xgboost_model = joblib.load(os.path.join(main_dir, 'xgboost_best_model.joblib'))
+logistic_regression_model = joblib.load('RPOJE/logistic_regression_best_model.joblib')
+knn_model = joblib.load('RPOJE/k-nearest_neighbors_best_model.joblib')
+decision_tree_model = joblib.load('RPOJE/decision_tree_best_model.joblib)
+random_forest_model = joblib.load('RPOJE/random_forest_best_model.joblib')
+gradient_boosting_model = joblib.load('RPOJE/gradient_boosting_best_model.joblib')
+xgboost_model = joblib.load('RPOJE/xgboost_best_model.joblib')
 
 
 
