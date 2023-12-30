@@ -53,7 +53,7 @@ def home():
     # Ana sayfa içeriği
     st.title("❤️ Happy Hearts: ML-Powered Heart Disease Prediction")
     st.markdown("Bulgu sonuçlarını 6 farklı makine öğrenmesi modeli ile analiz eder ve %98 doğruluk oranıyla cevap verir.")
-    st.image("anasayfa.png", caption="")
+    st.image("PROJE/anasayfa.png", caption="")
 
 
 
