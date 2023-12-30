@@ -59,7 +59,7 @@ def home():
 
 def presentation():
     st.markdown(
-        f'<iframe src="https://gamma.app/embed/vweud060u2xdrtr" style="width: 100vw; height: 130vh; border: none;" allow="fullscreen" "></iframe>',
+        f'<iframe src="https://gamma.app/embed/vweud060u2xdrtr" style="width: 90vw; height: 130vh; border: none;" allow="fullscreen" "></iframe>',
         unsafe_allow_html=True
     )
 
