@@ -1,3 +1,27 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+from copy import deepcopy
+import joblib
+import matplotlib.pyplot as plt
+import seaborn as sns
+import os
+
+
+df = pd.read_csv("heartfeature.csv")
+# Model dosya yollarını sabit olarak tanımla
+MODEL_PATHS = {
+    "Logistic Regression": "logistic_regression_best_model.joblib",
+    "K-Nearest Neighbors": "k-nearest_neighbors_best_model.joblib",
+    "Decision Tree": "decision_tree_best_model.joblib",
+    "Random Forest": "random_forest_best_model.joblib",
+    "Gradient Boosting": "gradient_boosting_best_model.joblib",
+    "XGBoost": "xgboost_best_model.joblib",
+}
+
+
+
+
 st.set_page_config(
     page_icon="❤️",
     layout="wide",
