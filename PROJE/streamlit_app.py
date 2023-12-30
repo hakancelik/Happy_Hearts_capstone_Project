@@ -41,6 +41,7 @@ st.set_page_config(
 models = load_models()
 
 # Ana uygulama fonksiyonu
+st.cache.clear_cache()
 def main():
     gif_path = "kalp.gif"
 
