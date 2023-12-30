@@ -20,7 +20,9 @@ MODEL_PATHS = {
 }
 
 # Modelleri yükleme fonksiyonu
-@st.cache
+import builtins
+
+@st.cache(hash_funcs={builtins.dict: lambda _: None})
 def load_models():
     return {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items()}
 
