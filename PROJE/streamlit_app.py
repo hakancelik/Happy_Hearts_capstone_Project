@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-
 df = pd.read_csv("PROJE/heartfeature.csv")
+
 # Model dosya yollarını sabit olarak tanımla
 MODEL_PATHS = {
     "Logistic Regression": "PROJE/logistic_regression_best_model.joblib",
@@ -30,9 +30,6 @@ def predict(model, input_data):
     prediction = loaded_model.predict(input_data)
     return prediction
 
-# Modelleri yükle
-models = load_models()
-
 # Streamlit arayüzü
 st.set_page_config(
     page_icon="❤️",
@@ -40,96 +37,10 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+# Modelleri yükle
+models = load_models()
 
-
-
-# Modelleri yükleme fonksiyonu
-@st.cache_resource
-#model = {name: joblib.load(model_path) for name, model_path in MODEL_PATHS.items()}
-model = dict()
-for name, model_path in MODEL_PATHS.items():
-    model[name] = joblib.load(model_path)
-
-
-
-# Tahmin fonksiyonu
-
-
-for model_name, model in models.items():
-    prediction = predict(model, input_data)
-    st.write(f"{model_name} Prediction: {prediction}")
 # Ana uygulama fonksiyonu
-
-
-
-# Ana sayfa içeriği
-def home():
-    # Ana sayfa içeriği
-    st.title("❤️ Happy Hearts: ML-Powered Heart Disease Prediction")
-    st.markdown("Bulgu sonuçlarını 6 farklı makine öğrenmesi modeli ile analiz eder ve %98 doğruluk oranıyla cevap verir.")
-    st.image("anasayfa.png", caption="")
-
-
-
-def presentation():
-    st.markdown(
-        f'<iframe src="https://gamma.app/embed/rhes0yzwx5jwg5o" style="width: 100vw; height: 130vh; border: none;" allow="fullscreen" "></iframe>',
-        unsafe_allow_html=True
-    )
-
-
-# Görselleştirme sayfası içeriği
-def visualization():
-    st.subheader("Görselleştirme Sayfası")
-
-    # Burada görselleştirme fonksiyonlarını ekleyebilirsiniz
-    # Örneğin:
-    crosstab_df = pd.crosstab(df["sex"], df["target"])
-
-    st.subheader("Heart Disease Frequency for Sex")
-    st.bar_chart(crosstab_df, use_container_width=True)
-    fig, ax = plt.subplots(figsize=(15, 8))
-    crosstab_df.plot(kind="bar", color=["salmon", "lightblue"], ax=ax)
-    plt.title("Heart Disease Frequency for Sex")
-    plt.xlabel("0 = No Disease, 1 = Disease")
-    plt.ylabel("Amount")
-    plt.legend(["Female", "Male"])
-    plt.xticks(rotation=0)
-    st.pyplot(fig)
-    # plot_square(number)
-    # age_range_thalach_box_plot(df)
-
-    # Scatter plot görselleştirmesi
-    st.subheader("Scatter Plot: Age Max Heart Rate Ratio vs. Target")
-    fig, ax = plt.subplots(figsize=(10, 6))
-    sns.scatterplot(x='age_max_heart_rate_ratio', y='target', data=df, ax=ax)
-    plt.title("Age Max Heart Rate Ratio vs. Target")
-    plt.xlabel("Age Max Heart Rate Ratio")
-    plt.ylabel("Target")
-    plt.show()
-    st.pyplot(fig)
-    # feature_importance_bar_plot(feature_importances, feature_names)
-    # roc_curve_plot(fpr, tpr)
-    #######
-    #######
-    # Boxplot görselleştirmesi
-    st.subheader("Boxplot: Age vs. Thalach by Target")
-    fig, ax = plt.subplots(figsize=(15, 8))
-    sns.boxplot(x='age', y='thalach', hue='target', data=df, ax=ax)
-    plt.title("Age vs. Thalach by Target")
-    plt.xlabel("Age")
-    plt.ylabel("Thalach")
-    plt.show()
-    st.pyplot(fig)
-    #######
-    #######
-
-    # Özellik önem sıralamasını görselleştirme
-
-
-# Ana uygulama
-# ... Diğer kodlar ...
-
 def main():
     gif_path = "kalp.gif"
 
@@ -150,11 +61,6 @@ def main():
         presentation()
 
     elif choice == "Predict":
-        # Model yükle
-        models = load_models()
-
-        st.subheader("Predict")
-
         # Kullanıcıdan giriş verilerini al
         input_data, sex = get_user_input()
 
@@ -241,5 +147,4 @@ def get_user_input():
 
 # Uygulamayı başlat
 if __name__ == '__main__':
-    models = load_models()
     main()
