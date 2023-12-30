@@ -121,7 +121,7 @@ def main():
 
     # Sidebar'a GIF'i ekleyin
     #st.sidebar.image(gif_path, use_column_width=True, caption="")
-    st.markdown(f'<img src="{gif_path}" alt="gif" width="400">', unsafe_allow_html=True)
+    st.sidebar(f'<img src="{gif_path}" alt="gif" width="400">', unsafe_allow_html=True)
 
 
     # Sol tarafta menü oluşturma
