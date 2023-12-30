@@ -8,15 +8,15 @@ import seaborn as sns
 import os
 
 
-df = pd.read_csv("heartfeature.csv")
+df = pd.read_csv("PROJE/heartfeature.csv")
 # Model dosya yollarını sabit olarak tanımla
 MODEL_PATHS = {
-    "Logistic Regression": "logistic_regression_best_model.joblib",
-    "K-Nearest Neighbors": "k-nearest_neighbors_best_model.joblib",
-    "Decision Tree": "decision_tree_best_model.joblib",
-    "Random Forest": "random_forest_best_model.joblib",
-    "Gradient Boosting": "gradient_boosting_best_model.joblib",
-    "XGBoost": "xgboost_best_model.joblib",
+    "Logistic Regression": "PROJE/logistic_regression_best_model.joblib",
+    "K-Nearest Neighbors": "PROJE/k-nearest_neighbors_best_model.joblib",
+    "Decision Tree": "PROJE/decision_tree_best_model.joblib",
+    "Random Forest": "PROJE/random_forest_best_model.joblib",
+    "Gradient Boosting": "PROJE/gradient_boosting_best_model.joblib",
+    "XGBoost": "PROJE/xgboost_best_model.joblib",
 }
 
 
