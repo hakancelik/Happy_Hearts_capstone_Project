@@ -120,8 +120,7 @@ def main():
     gif_path = "PROJE/kalp.gif"
 
     # Sidebar'a GIF'i ekleyin
-    #st.sidebar.image(gif_path, use_column_width=True, caption="")
-    st.sidebar(f'<img src="{gif_path}" alt="gif" width="400">', unsafe_allow_html=True)
+    st.sidebar.image(gif_path, use_column_width=True, caption="")
 
 
     # Sol tarafta menü oluşturma
