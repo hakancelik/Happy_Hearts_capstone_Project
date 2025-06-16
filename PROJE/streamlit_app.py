@@ -53,7 +53,7 @@ def home():
     # Ana sayfa içeriği
     st.title("❤️ Happy Hearts: ML-Powered Heart Disease Prediction")
     st.markdown("Bulgu sonuçlarını 6 farklı makine öğrenmesi modeli ile analiz eder ve %98 doğruluk oranıyla cevap verir.")
-    st.image("PROJE/anasayfa.png", caption="")
+    # st.image("PROJE/anasayfa.png", caption="")
 
 
 
@@ -120,7 +120,7 @@ def main():
     gif_path = "PROJE/kalp.gif"
 
     # Sidebar'a GIF'i ekleyin
-    st.sidebar.image(gif_path, use_column_width=True, caption="")
+    # st.sidebar.image(gif_path, use_column_width=True, caption="")
 
 
     # Sol tarafta menü oluşturma
@@ -177,9 +177,9 @@ def main():
                     #heart_image_path = "PROJE/health.jpg"  # Kalp simgesinin gerçek yolunu belirtin
                     #if os.path.exists(heart_image_path):
                         #st.image(heart_image_path, caption="", use_column_width=False)
-                        st.balloons()
-                    else:
-                        st.warning("Warning: Heart image not found at the specified path.")
+                    st.balloons()
+                    #else:
+                        #st.warning("Warning: Heart image not found at the specified path.")
 
             # Modeli ve tahmin sonucunu sıfırla
             models[selected_model] = initial_model
