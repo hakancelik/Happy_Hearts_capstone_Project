@@ -165,18 +165,18 @@ def main():
             if prediction_result == "KALP RAHATISZLIĞI VAR 💔":
                 st.error(f"Kullanılan Model {selected_model}: {prediction_result}")
                 # Cinsiyete göre resim göster
-                if sex == "Kadın":
-                    st.image("PROJE/kadin.jpg", caption="", use_column_width=False)
-                elif sex == "Erkek":
-                    st.image("PROJE/erkek.jpg", caption="", use_column_width=False)
+                #if sex == "Kadın":
+                    #st.image("PROJE/kadin.jpg", caption="", use_column_width=False)
+                #elif sex == "Erkek":
+                    #st.image("PROJE/erkek.jpg", caption="", use_column_width=False)
             else:
                 st.success(f"Kullanılan Model {selected_model}: {prediction_result}")
 
                 # No Heart Disease durumunda kalp simgesi gösterme ve balonları ekleme
                 if prediction_result == "KALP RAHATSIZLIĞI YOK 💖":
-                    heart_image_path = "PROJE/health.jpg"  # Kalp simgesinin gerçek yolunu belirtin
-                    if os.path.exists(heart_image_path):
-                        st.image(heart_image_path, caption="", use_column_width=False)
+                    #heart_image_path = "PROJE/health.jpg"  # Kalp simgesinin gerçek yolunu belirtin
+                    #if os.path.exists(heart_image_path):
+                        #st.image(heart_image_path, caption="", use_column_width=False)
                         st.balloons()
                     else:
                         st.warning("Warning: Heart image not found at the specified path.")
