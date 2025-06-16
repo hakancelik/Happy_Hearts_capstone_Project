@@ -176,10 +176,10 @@ def main():
                 if prediction_result == "KALP RAHATSIZLIĞI YOK 💖":
                     #heart_image_path = "PROJE/health.jpg"  # Kalp simgesinin gerçek yolunu belirtin
                     #if os.path.exists(heart_image_path):
-                        #st.image(heart_image_path, caption="", use_column_width=False)
+                    #    st.image(heart_image_path, caption="", use_column_width=False)
                     st.balloons()
                     #else:
-                        #st.warning("Warning: Heart image not found at the specified path.")
+                    #    st.warning("Warning: Heart image not found at the specified path.")
 
             # Modeli ve tahmin sonucunu sıfırla
             models[selected_model] = initial_model
