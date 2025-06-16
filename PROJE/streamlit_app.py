@@ -178,7 +178,6 @@ def main():
                     #if os.path.exists(heart_image_path):
                     #    st.image(heart_image_path, caption="", use_column_width=False)
                     st.balloons()
-
             # Modeli ve tahmin sonucunu sıfırla
             models[selected_model] = initial_model
             prediction_result = None
